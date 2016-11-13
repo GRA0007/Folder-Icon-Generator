@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+
+	 _   _        _  _        ___ 
+	| | | |  ___ | || |  ___ |__ \
+	| |_| | / _ \| || | / _ \  / /
+	|  _  ||  __/| || || (_) ||_| 
+	|_| |_| \___||_||_| \___/ (_) 
+
+		You look a little lost!
+   Were you perhaps looking for this?
+https://github.com/GRA0007/Folder-Icon-Generator
+
+-->
+<html>
+	<head>
+		<title>Anime Folder Icons</title>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/dependsOn.min.js"></script>
+		<script src="./js/vibrant.min.js"></script>
+		<script src="./js/awesomplete.min.js"></script>
+		<script src="./js/script.js"></script>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/awesomplete.css" />
+	</head>
+	<body>
+		<main>
+			<h1>Folder Icon Generator</h1>
+			<div id="progress">
+				<div class="progress-step one active" title="Select images">1</div>
+				<div class="progress-step two" title="Settings">2</div>
+				<div class="progress-step three" title="Generate icons">3</div>
+				<div class="progress-step four" title="Download">4</div>
+			</div>
+			<!-- Process Images -->
+			<section class="step step-one current">
+				<!--<textarea id="images" onkeyup="textAreaAdjust(this)" onkeydown="textAreaAdjust(this)" onload="textAreaAdjust(this)" placeholder="Image urls (comma-seperated)">https://myanimelist.cdn-dena.com/images/anime/3/60551l.jpg,https://myanimelist.cdn-dena.com/images/anime/7/82119l.jpg</textarea>-->
+				<div id="anime_input_frame">
+					<input id="anime_input" type="text" placeholder="Type the name of an anime" />
+					<div class="loader">
+						<svg viewBox="25 25 50 50">
+							<circle cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+						</svg>
+					</div>
+				</div>
+				<div id="anime_list"></div>
+				<span class="flex"><span class="fspacer"></span><button type="button" onclick="settings();">Next</button></span>
+			</section>
+			<!-- Settings -->
+			<section class="step step-two">
+				<h2>Settings</h2>
+				<input type="checkbox" id="coverImage" name="coverImage" checked="checked" />
+				<label for="coverImage" data-checkbox="yes" title="You can disable the image entirely and just use the folder icons"></label>
+				<label for="coverImage" title="You can disable the image entirely and just use the folder icons">Cover image</label>
+				<div class="indent">
+					<label for="coverHeight" title="Set the height of the cover image (the width changes proportionally)">Cover height (px)</label>
+					<input type="number" id="coverHeight" name="coverHeight" title="Set the height of the cover image (the width changes proportionally)" value="460" />
+					<label for="coverRotation" title="Set the rotation of the cover image (in degrees)">Cover rotation (&deg;)</label>
+					<input type="number" value="-3" id="coverRotation" name="coverRotation" title="Set the rotation of the cover image (in degrees)" />
+					<label for="coverX" title="Set the x position (vertical) of the cover image">Cover x position (px)</label>
+					<input type="number" id="coverX" name="coverX" title="Set the x position (vertical) of the cover image" value="170" />
+					<label for="coverY" title="Set the y position (vertical) of the cover image">Cover y position (px)</label>
+					<input type="number" id="coverY" name="coverY" title="Set the y position (vertical) of the cover image" value="50" />
+				</div>
+				<label title="Icon files can hold multiple resolutions">Sizes</label>
+				<div class="indent inline">
+					<input type="checkbox" id="16px" name="16px" checked="checked" />
+					<label for="16px" data-checkbox="yes"></label>
+					<label for="16px">16 pixels</label>
+					<br />
+					<input type="checkbox" id="32px" name="32px" checked="checked" />
+					<label for="32px" data-checkbox="yes"></label>
+					<label for="32px">32 pixels</label>
+					<br />
+					<input type="checkbox" id="48px" name="48px" checked="checked" />
+					<label for="48px" data-checkbox="yes"></label>
+					<label for="48px">48 pixels</label>
+					<br />
+					<input type="checkbox" id="64px" name="64px" checked="checked" />
+					<label for="64px" data-checkbox="yes"></label>
+					<label for="64px">64 pixels</label>
+					<br />
+					<input type="checkbox" id="128px" name="128px" checked="checked" />
+					<label for="128px" data-checkbox="yes"></label>
+					<label for="128px">128 pixels</label>
+					<br />
+					<input type="checkbox" id="256px" name="256px" checked="checked" />
+					<label for="256px" data-checkbox="yes"></label>
+					<label for="256px">256 pixels</label>
+				</div>
+				<span class="flex"><button type="button" onclick="back();">Back</button><span class="fspacer"></span><button type="button" class="btnAlt" onclick="resetValues();">Reset</button><button type="button" onclick="start();">Next</button></span>
+			</section>
+			<!-- Processing -->
+			<section class="step step-three">
+				<div id="loading"><div></div></div>
+				<span class="info">Processing your icons. Please wait, this can take up to 10 minutes. Do not refresh the page.</span>
+			</section>
+			<!-- Download -->
+			<section class="step step-four">
+				<span class="info">Your icons are ready, please click the button below to download them. The file will be removed from the server after 3 hours.</span>
+				<center><a id="downloadButton" href="#" download="icons">Download Icons ($)</a></center>
+			</section>
+			<!-- Error -->
+			<section class="step error">
+				<span class="info">An error occurred while processing the icons. Please try again or copy and paste the error below into a <a href="https://github.com/GRA0007/Folder-Icon-Generator/issues/new">new issue</a> on Github.</span>
+				<span class="info errorData">No data was returned</span>
+			</section>
+		</main>
+	</body>
+</html>
