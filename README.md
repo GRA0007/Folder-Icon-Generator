@@ -1,5 +1,5 @@
 # Folder Icon Generator
-*Link coming soon*
+Visit the website and try it out for yourself! [http://foldericons.ga](http://foldericons.ga/)
 
 ## How does it work?
 The folder icon generator takes a list of anime (with their titles and image links) and turns them into a zipped file full of icons that you can use to decorate your anime folder.
@@ -26,7 +26,7 @@ If you manage to find any bugs in my code, please submit a pull request and fix 
 The final goal with this project is to expand it to multiple api's such as imdb, and make it available for not just anime, but any tv show, movie, etc. I didn't want the name to be too specific, although currently it only supports anime.
 
 ### Where can I use it?
-I don't currently have a server where I can host this yet, or a domain for that matter, so for now you can't. As soon as I can find a place to host it, the link will be available here.
+The server is live now! Go visit it [here](http://foldericons.ga/)!
 
 ### How can I help?
 All the code is open source! If you want to help clean up my messy code, have a great idea, or think that you could make it work better, feel free to submit a pull request and I'll review your changes.
