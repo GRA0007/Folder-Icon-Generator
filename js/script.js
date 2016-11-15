@@ -128,7 +128,7 @@ function start() {
 		current[0] = current[0].replace(/[^\x00-\x7F]/g, ""); //Any other characters that are not ascii
 		
 		//console.log(current);
-		loadImg('https://crossorigin.me/' + current[1], i, current, function(i, img, current) {
+		loadImg('https://foldericons-corsproxy.herokuapp.com/' + current[1], i, current, function(i, img, current) {
 			var vibrant = new Vibrant(img);
 			var swatches = vibrant.swatches();
 			
@@ -237,7 +237,7 @@ function filterByStatus(arr) {
 function importFromMAL(username, status = "watching") {
 	//status can be: "watching", "plan to watch", "on-hold", "completed", "dropped"
 	var ajax = new XMLHttpRequest();
-	ajax.open("GET", "https://crossorigin.me/" + "http://myanimelistrt.azurewebsites.net/2.1/animelist/" + username, true);
+	ajax.open("GET", "https://foldericons-corsproxy.herokuapp.com/" + "http://myanimelistrt.azurewebsites.net/2.1/animelist/" + username, true);
 	ajax.onload = function() {
 		$('.loader').css('display', 'none');
 		var tempp = JSON.parse(ajax.responseText);
@@ -294,7 +294,7 @@ $(document).ready(function() {
 	function search(keyword) {
 		var ajax = new XMLHttpRequest();
 		//ajax.open("GET", "https://crossorigin.me/" + "https://myanimelist.net/search/prefix.json?type=anime&keyword=" + keyword, true);
-		ajax.open("GET", "https://crossorigin.me/" + "http://myanimelistrt.azurewebsites.net/2.1/anime/search?q=" + keyword, true);
+		ajax.open("GET", "https://foldericons-corsproxy.herokuapp.com/" + "http://myanimelistrt.azurewebsites.net/2.1/anime/search?q=" + keyword, true);
 		ajax.onload = function() {
 			$('.loader').css('display', 'none');
 			var list = JSON.parse(ajax.responseText);
