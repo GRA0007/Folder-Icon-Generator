@@ -20,6 +20,29 @@ main {
 	padding:20px;
 	border-radius:3px;
 	box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	position:relative;
+}
+main #social {
+	position:absolute;
+	top:6px;
+	right:6px;
+	height:24px;
+	width:24px;
+	padding:10px;
+	background-image:url(../res/share.svg);
+	background-size:24px;
+	background-position:center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	transition:opacity 0.2s, background-color 0.2s;
+	border-radius:50%;
+	opacity:0.4;
+}
+main #social:hover {
+	opacity:0.7;
+}
+main #social:active {
+	background-color:rgba(0,0,0,.2);
 }
 h1 {
 	margin:0;
@@ -441,4 +464,71 @@ footer a {
 }
 footer a:hover {
 	border-bottom:2px solid #AAA;
+}
+#share-sheet {
+	position:fixed;
+	bottom:-400px;
+	height:400px;
+	left:calc(50vw - 400px);
+	right:calc(50vw - 400px);
+	width:800px;
+	background-color:#FFF;
+	border-top-left-radius:2px;
+	border-top-right-radius:2px;
+	box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	padding:7px;
+	box-sizing:border-box;
+	overflow:hidden;
+	transition:bottom 0.3s;
+	transition-timing-function:ease-out;
+	z-index:20;
+}
+#share-sheet.open {
+	bottom:0px;
+}
+.sheet-icon {
+	display:block;
+	height:170px;
+	width:170px;
+	padding:7px;
+	text-decoration:none;
+	cursor:pointer;
+	border-radius:50%;
+	transition:background-color 0.2s;
+}
+.sheet-icon:active {
+	background-color:rgba(0,0,0,.2);
+}
+.sheet-icon img {
+	width:50%;
+	display:block;
+	margin:25px auto 10px auto;
+}
+.sheet-icon span {
+	display:block;
+	text-align:center;
+	color:#888;
+	font-size:16px;
+}
+#copyLink {
+	position:absolute;
+	left:1000%;
+	top:-50px;
+}
+#overlay {
+	position:fixed;
+	top:0; right:0; bottom:0; left:0;
+	height:100vh;
+	width:100vw;
+	z-index:10;
+	transition:background-color 0.2s;
+	transition-timing-function:ease-out;
+	pointer-events:none;
+}
+#share-sheet.open + #overlay {
+	background-color:rgba(0,0,0,.5);
+	pointer-events:all;
 }

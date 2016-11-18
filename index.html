@@ -14,7 +14,7 @@ https://github.com/GRA0007/Folder-Icon-Generator
 -->
 <html>
 	<head>
-		<title>Anime Folder Icons</title>
+		<title>Folder Icon Generator</title>
 		<link type="image/x-icon" rel="icon" href="favicon.ico" />
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/dependsOn.min.js"></script>
@@ -106,6 +106,7 @@ https://github.com/GRA0007/Folder-Icon-Generator
 				<span class="info">An error occurred while processing the icons. Please try again or copy and paste the error below into a <a href="https://github.com/GRA0007/Folder-Icon-Generator/issues/new">new issue</a> on Github.</span>
 				<span class="info errorData">No data was returned</span>
 			</section>
+			<div id="social" title="Share" onclick="toggleShareSheet();"></div>
 		</main>
 		<div class="fspacer"></div>
 		<footer>
@@ -115,5 +116,41 @@ https://github.com/GRA0007/Folder-Icon-Generator
 				<span><a href="https://github.com/GRA0007/Folder-Icon-Generator/issues/new">Report an issue</a> or <a href="https://github.com/GRA0007/Folder-Icon-Generator">submit a pull request</a></span>
 			</span>
 		</footer>
+		<div id="share-sheet">
+			<input type="text" id="copyLink" value="http://foldericons.ga/" />
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//foldericons.ga/" target="_blank">
+				<img src="res/share-facebook.svg" />
+				<span>Facebook</span>
+			</a>
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="https://twitter.com/home?status=Check%20out%20http%3A//foldericons.ga/%20to%20generate%20folder%20icons%20for%20your%20anime%20folder!" target="_blank">
+				<img src="res/share-twitter.svg" />
+				<span>Twitter</span>
+			</a>
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="https://plus.google.com/share?url=http%3A//foldericons.ga/" target="_blank">
+				<img src="res/share-google.svg" />
+				<span>Google+</span>
+			</a>
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=http://foldericons.ga/&title=Folder%20Icon%20Generator" target="_blank">
+				<img src="res/share-tumblr.svg" />
+				<span>Tumblr</span>
+			</a>
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="https://www.linkedin.com/shareArticle?url=http://foldericons.ga/&title=Folder%20Icon%20Generator" target="_blank">
+				<img src="res/share-linkedin.svg" />
+				<span>LinkedIn</span>
+			</a>
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="https://reddit.com/submit?url=http://foldericons.ga/&title=Folder%20Icon%20Generator" target="_blank">
+				<img src="res/share-reddit.svg" />
+				<span>Reddit</span>
+			</a>
+			<a class="sheet-icon" onclick="toggleShareSheet();" href="mailto:?&subject=Folder Icon Generator&body=Check%20out%20http%3A//foldericons.ga/%20to%20generate%20folder%20icons%20for%20your%20anime%20folder!">
+				<img src="res/share-email.svg" />
+				<span>Email</span>
+			</a>
+			<a class="sheet-icon" onclick="copyToClipboard(document.getElementById('copyLink')); toggleShareSheet();">
+				<img src="res/share-copy.svg" />
+				<span>Copy link</span>
+			</a>
+		</div>
+		<div id="overlay" onclick="toggleShareSheet();"></div>
 	</body>
 </html>
