@@ -374,7 +374,11 @@ $(document).ready(function() {
 		$('.loader').css('display', 'block');
 	}
 	
-	$('#anime_input').keyup(function() { if ($('#anime_input').val() != '' && $('#anime_input').val().length >= 3) {search($('#anime_input').val())}});
+	$('#anime_input').change(function() {
+		if ($('#anime_input').val() != '' && $('#anime_input').val().length >= 3) {
+			search($('#anime_input').val());
+		}
+	});
 	
 	document.getElementById('anime_input').addEventListener('awesomplete-selectcomplete', function (e) {
 		addToList(e.text, e.target.value);
