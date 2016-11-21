@@ -374,8 +374,8 @@ $(document).ready(function() {
 		$('.loader').css('display', 'block');
 	}
 	
-	$('#anime_input').change(function() {
-		if ($('#anime_input').val() != '' && $('#anime_input').val().length >= 3) {
+	$('#anime_input').keypress(function(e) {
+		if ($('#anime_input').val() != '' && $('#anime_input').val().length >= 3 && e.which >= 32 && e.which <= 127) {
 			search($('#anime_input').val());
 		}
 	});
