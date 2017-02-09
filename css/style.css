@@ -15,7 +15,7 @@ body {
 main {
 	width:800px;
 	background-color:#efefef;
-	margin:50px auto;
+	margin:50px auto 10px auto;
 	box-sizing:border-box;
 	padding:20px;
 	border-radius:3px;
@@ -448,6 +448,25 @@ input[type=number]:focus {
 }
 .anime-item:hover:after {
 	opacity:0.35;
+}
+
+#ad {
+	width:800px;
+	background-color:#efefef;
+	margin:10px auto 50px auto;
+	box-sizing:border-box;
+	padding:40px 36px 15px 36px;
+	border-radius:3px;
+	box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	position:relative;
+}
+#ad:before {
+	content:'Sponsor:';
+	position:absolute;
+	top:10px;
+	left:36px;
+	font-weight:bold;
+	color:#BBB;
 }
 
 footer {
